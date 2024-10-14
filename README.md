@@ -1,4 +1,5 @@
 # MI-Lab-CSV-FHIR-transformation
+Requirements: Docker mit Docker-compose, Java mit Webstart Unterstützung, z.B. Oracle Java 8
 ## Docker Installation
 ### Docker Desktop
 Docker Desktop [Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module) (Windows) 
@@ -24,6 +25,15 @@ Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docke
    Dann wurden folgende Container im Docker-compose Netzwerk gestartet:
    - **Mirth Connect** mit eigener Postgres Datenbank
    - **Hapi FHIR Server** mit eigener Postgres Datenbank
+## Mirth-connect Installation
+1. Im Browser ´localhost:8080´ aufrufen
+   Oder über Docker Desktop aufrufen siehe:
+   ![docker7GIF](https://github.com/user-attachments/assets/9a5c6943-7c36-4771-bf29-6eae11f62833)
+2. Klicke "Launch Mirt Connect Administrator“
+   Das lädt einen Java Webstart herunter. Dann diesen ausführen um Mirth-connect zu installieren:
+   ![Mirth2GIF](https://github.com/user-attachments/assets/0b2476f4-71d5-4055-9fba-91391e315d12)
+
+
 
 
 
