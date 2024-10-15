@@ -1,0 +1,58 @@
+version: "3.1"
+services:
+  mirth:
+    image: mperbix/mi-lab-mirth-connect:v1
+    platform: linux/amd64
+    environment:
+      - DATABASE=postgres
+      - DATABASE_URL=jdbc:postgresql://db:5432/mirthdb
+      - DATABASE_MAX_CONNECTIONS=20
+      - DATABASE_USERNAME=mirthdb
+      - DATABASE_PASSWORD=mirthdb
+      - DATABASE_MAX_RETRY=2
+      - DATABASE_RETRY_WAIT=10000
+      - VMOPTIONS=-Xmx512m
+      - KEYSTORE_STOREPASS=xDau60tdWQjq
+      - KEYSTORE_KEYPASS=1R78Ut4k1l7l
+    ports:
+      - 8080:8080/tcp
+      - 8443:8443/tcp
+    volumes:
+      - ./mirth-connect:/opt/connect/appdata
+    depends_on:
+      - mirth-db
+  mirth-db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=mirthdb
+      - POSTGRES_PASSWORD=mirthdb
+      - POSTGRES_DB=mirthdb
+    ports:
+      - 5434:5432
+  hapi: 
+    image: hapiproject/hapi:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://hapi-db:5432/hapi
+      - SPRING_DATASOURCE_USERNAME=hapi
+      - SPRING_DATASOURCE_PASSWORD=hapi
+      - SPRING_DATASOURCE_DRIVERCLASSNAME=org.postgresql.Driver
+      - spring.jpa.properties.hibernate.dialect=ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
+    ports:
+      - 8090:8080
+  hapi-db:
+    image: postgres
+    container_name: hapi-db
+    environment:
+      - POSTGRES_DB=hapi
+      - POSTGRES_USER=hapi
+      - POSTGRES_PASSWORD=hapi
+    ports:
+      - 5433:5432
+    volumes:
+      - hapi-data:/var/lib/postgresql/data
+
+volumes:
+    hapi-data:
+
+
+     
