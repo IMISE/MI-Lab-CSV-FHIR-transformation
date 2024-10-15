@@ -1,7 +1,34 @@
 # MI-Lab-CSV-FHIR-transformation
-
+Requirements: Docker mit Docker-compose, Java mit Webstart Unterstützung, z.B. Oracle Java 8
 ## Docker Installation
-
-Docker Desktop Installation [Download für Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)
-
-![](D:\IMISE Arbeit\NFDI4Health\Übung 2 - FHIR CDM\Screenshots\docker1.png)
+### Docker Desktop
+Docker Desktop [Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module) (Windows) 
+Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docker-desktop/)
+**Wichtig:** Die Installation startet einmal den Rechner neu
+1. Configuration
+  ![docker1](https://github.com/user-attachments/assets/4df34253-41c2-4a82-86cc-b8016bbac017)
+  ![docker2](https://github.com/user-attachments/assets/9b3e3b0b-7084-49f3-9f9c-22a915e6e97b)
+2. Ohne Anmeldung fortfahren
+   Klicke "Skip" um ohne Anmeldung Docker Desktop zu benutzen 
+   ![docker3](https://github.com/user-attachments/assets/e51ec963-5a34-40dc-88cd-7156395b49e5)
+3. Installation abgeschlossen
+   ![docker4](https://github.com/user-attachments/assets/181e767a-9ea1-43a7-855d-a804a72ee707)
+### Mirth-connect mit Docker
+**Wichtig:** Docker Desktop muss gestartet sein damit mit Docker gearbeitet werden kann. 
+1. Clone GitHub Repository in neuen Ordner: `git clone https://github.com/IMISE/MI-Lab-CSV-FHIR-transformation.git`
+2. Navigiere zum root Ordner "MI-Lab-CSV-FHIR-transformation" mit der Datei "docker-compose.yml"
+3. Öffne den Terminal in diesem Ordner
+4. Führe den Befehl `docker-compose up -d` aus
+   Das zieht alle Docker images von einem Server. Der Download dauert ca. 5 min.
+   In Docker Desktop sieht es dann folgendermaßen aus:
+   ![docker5](https://github.com/user-attachments/assets/d6a2e65d-983c-4f7c-8e6e-995120973f7b)
+   Dann wurden folgende Container im Docker-compose Netzwerk gestartet:
+   - **Mirth Connect** mit eigener Postgres Datenbank
+   - **Hapi FHIR Server** mit eigener Postgres Datenbank
+## Mirth-connect Installation
+1. Im Browser ´localhost:8080´ aufrufen
+   Oder über Docker Desktop aufrufen siehe:
+   ![docker7GIF](https://github.com/user-attachments/assets/9a5c6943-7c36-4771-bf29-6eae11f62833)
+2. Klicke "Launch Mirt Connect Administrator“
+   Das lädt einen Java Webstart herunter. Dann diesen ausführen um Mirth-connect zu installieren:
+   ![Mirth2GIF](https://github.com/user-attachments/assets/0b2476f4-71d5-4055-9fba-91391e315d12)
