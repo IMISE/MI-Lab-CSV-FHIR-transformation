@@ -51,6 +51,12 @@ services:
     volumes:
       - hapi-data:/var/lib/postgresql/data
 
+  clinfhir:
+    image: mperbix/mi-lab-clinfhir:latest
+    container_name: clinfhir
+    ports:
+      - 8000:8000
+
 volumes:
     hapi-data:
 
