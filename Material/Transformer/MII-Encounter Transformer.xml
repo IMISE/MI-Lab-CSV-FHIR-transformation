@@ -2,7 +2,7 @@
   <elements>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - class - code (out) - &lt;-- row [1] - ClassCode (in)</name>
-      <sequenceNumber>1</sequenceNumber>
+      <sequenceNumber>0</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;class&apos;][&apos;code&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;ClassCode&apos;].toString()</mapping>
@@ -11,7 +11,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - class - display (out) &lt;-- row [1] - ClassDisplay (in)</name>
-      <sequenceNumber>2</sequenceNumber>
+      <sequenceNumber>1</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;class&apos;][&apos;display&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;ClassDisplay&apos;].toString()</mapping>
@@ -20,7 +20,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - serviceProvider -  identifier - value (out) &lt;-- row [1] - ServiceProvider (in)</name>
-      <sequenceNumber>3</sequenceNumber>
+      <sequenceNumber>2</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;serviceProvider&apos;][&apos;identifier&apos;][&apos;value&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;ServiceProvider&apos;].toString()</mapping>
@@ -29,7 +29,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - period - start (out) &lt;-- row [1] - start (in)</name>
-      <sequenceNumber>4</sequenceNumber>
+      <sequenceNumber>3</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;period&apos;][&apos;start&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;start&apos;].toString()</mapping>
@@ -38,7 +38,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - period - end (out) &lt;-- row [1] - end (in)</name>
-      <sequenceNumber>5</sequenceNumber>
+      <sequenceNumber>4</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;period&apos;][&apos;end&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;start&apos;].toString()</mapping>
@@ -47,7 +47,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - hospitalization - admitSource - coding [0] - code (out) &lt;-- row [1] - AdmitSource (in)</name>
-      <sequenceNumber>6</sequenceNumber>
+      <sequenceNumber>5</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;hospitalization&apos;][&apos;admitSource&apos;][&apos;coding&apos;][0][&apos;code&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;AdmitSource&apos;].toString()</mapping>
@@ -56,7 +56,7 @@
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
       <name>entry [0] - resource - hospitalization - dischargeDisposition - coding [0] - code (out) &lt;-- row [1] - DischargeDisposition (in)</name>
-      <sequenceNumber>7</sequenceNumber>
+      <sequenceNumber>6</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;hospitalization&apos;][&apos;dischargeDisposition&apos;][&apos;coding&apos;][0][&apos;code&apos;]</messageSegment>
       <mapping>msg[&apos;row&apos;][0][&apos;DischargeDisposition&apos;].toString()</mapping>

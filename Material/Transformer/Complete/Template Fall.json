@@ -1,0 +1,71 @@
+{
+   "resourceType":"Bundle",
+   "type":"transaction",
+   "entry":[
+      {
+         "resource":{
+            "resourceType":"Encounter",
+            "meta":{
+               "profile":[
+                  "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtungt"
+               ]
+            },
+            "status":"finished",
+            "identifier":[
+               {
+                  "type":{
+                     "coding":[
+                        {
+                           "system":"http://terminology.hl7.org/CodeSystem/v2-0203",
+                           "code":"VN"
+                        }
+                     ]
+                  },
+                  "system":"http://mimic.mit.edu/fhir/mimic/identifier/encounter-hosp",
+                  "value":"25135483"
+               }
+            ],
+            "class":{
+               "code":"AMB",
+               "display":"ambulatory",
+               "system":"http://hl7.org/fhir/v3/ActCode/cs.html"
+            },
+            "subject":{
+               "reference":"Patient/10004235"
+            },
+            "serviceProvider":{
+               "identifier":{
+                  "system":"http://medizininformatik-initiative.de/fhir/NamingSystem/Einrichtungsidentifikator/MusterKrankenhaus",
+                  "value":"P38TI6"
+               }
+            },
+            "period":{
+               "start":"2196-02-24 14:38:00",
+               "end":"2196-03-04 14:02:00"
+            },
+            "hospitalization":{
+               "admitSource":{
+                  "coding":[
+                     {
+                        "system":"http://mimic.mit.edu/fhir/mimic/CodeSystem/mimic-admit-source",
+                        "code":"TRANSFER FROM HOSPITAL"
+                     }
+                  ]
+               },
+               "dischargeDisposition":{
+                  "coding":[
+                     {
+                        "system":"http://mimic.mit.edu/fhir/mimic/CodeSystem/mimic-discharge-disposition",
+                        "code":"SKILLED NURSING FACILITY"
+                     }
+                  ]
+               }
+            }
+            },
+            "request":{
+               "method":"POST",
+               "url":"Encounter"
+            }
+      }
+   ]
+}
