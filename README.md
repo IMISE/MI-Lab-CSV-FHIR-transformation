@@ -14,6 +14,15 @@ Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docke
 3. Installation abgeschlossen
    ![docker4](https://github.com/user-attachments/assets/181e767a-9ea1-43a7-855d-a804a72ee707)
 ### Mirth-connect mit Docker
+**Docker Netzwerk Struktur**. Folgende Container sind nach dem Starten von Docker-compose (siehe Schritte unten) online:
+| Container | Ports | Volumes |
+| -------- | ------- | ------- |
+| Mirth-Connect | **8080**, 8443 | Ordner: /Setup/mirth-connect/ |
+| Mirth-Connect Database | 5434 ||
+| Hapi FHIR | **8090** ||
+| Hapi FHIR Database| 5433 ||
+| ClinFHIR | **8000** ||
+
 **Wichtig:** Docker Desktop muss gestartet sein damit mit Docker gearbeitet werden kann. 
 1. Clone GitHub Repository in neuen Ordner: `git clone https://github.com/IMISE/MI-Lab-CSV-FHIR-transformation.git`
 2. Navigiere zum root Ordner "MI-Lab-CSV-FHIR-transformation" mit der Datei "docker-compose.yml"
@@ -32,3 +41,14 @@ Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docke
 2. Klicke "Launch Mirt Connect Administrator“
    Das lädt einen Java Webstart herunter. Dann diesen ausführen um Mirth-connect zu installieren:
    ![Mirth2GIF](https://github.com/user-attachments/assets/0b2476f4-71d5-4055-9fba-91391e315d12)
+### Mirth-Connect Ordnerstruktur
+In der Übung soll Mirth-Connect auf die CSV-Dateien in einem definierten Ordner zugreifen und diese einlesen. Da Mirth-Connect abgekapselt in einem
+Docker Container läuft, wurde ein Ordner im Container auf einen lokalen Ordner gemappt. 
+Weitere Informationen dazu sind in der Docker Dokumentation zu ![Volumes](https://docs.docker.com/engine/storage/volumes/).
+
+**Docker Container Ordner**: /opt/connect/appdata 
+
+**Lokaler Ordner**: /Setup/mirth-connect
+
+Nur Dateien und Unterordner in dem Ordner /Setup/mirth-connect werden von Mirth-Connect erkannt. 
+
