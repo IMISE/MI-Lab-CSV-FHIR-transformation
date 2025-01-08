@@ -25,7 +25,7 @@ Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docke
 
 **Wichtig:** Docker Desktop muss gestartet sein damit mit Docker gearbeitet werden kann. 
 1. Clone GitHub Repository in neuen Ordner: `git clone https://github.com/IMISE/MI-Lab-CSV-FHIR-transformation.git`
-2. Navigiere zum root Ordner "MI-Lab-CSV-FHIR-transformation" mit der Datei "docker-compose.yml"
+2. Navigiere vom root Ordner "MI-Lab-CSV-FHIR-transformation" in den "Setup" Ordner mit der Datei "docker-compose.yml"
 3. Öffne den Terminal in diesem Ordner
 4. Führe den Befehl `docker-compose up -d` aus
    Das zieht alle Docker images von einem Server. Der Download dauert ca. 5 min.
