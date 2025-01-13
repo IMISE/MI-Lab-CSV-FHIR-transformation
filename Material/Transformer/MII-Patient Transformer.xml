@@ -1,7 +1,7 @@
 <transformer version="4.2.0">
   <elements>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - identifier [0] - system (out) &lt;-- row [1] - identifier_system (in)</name>
+      <name>identifier_system</name>
       <sequenceNumber>0</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;identifier&apos;][0][&apos;system&apos;]</messageSegment>
@@ -10,7 +10,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - identifier [0] - value (out) &lt;-- row [1] - identifier_value (in)</name>
+      <name>identifier_value</name>
       <sequenceNumber>1</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;identifier&apos;][0][&apos;value&apos;]</messageSegment>
@@ -19,7 +19,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - name [0] - use (out) &lt;-- row [1] - name_use (in)</name>
+      <name>name_use</name>
       <sequenceNumber>2</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;name&apos;][0][&apos;use&apos;]</messageSegment>
@@ -28,7 +28,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - _gender - extension [0] - valueCoding - code (out) &lt;-- row [1] - gender_ext_code (in)</name>
+      <name>gender_code</name>
       <sequenceNumber>3</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;_gender&apos;][&apos;extension&apos;][0][&apos;valueCoding&apos;][&apos;code&apos;]</messageSegment>
@@ -37,7 +37,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - _gender - extension [0] - valueCoding - display (out) &lt;-- row [1] - gender_ext_display (in)</name>
+      <name>gender_display</name>
       <sequenceNumber>4</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;_gender&apos;][&apos;extension&apos;][0][&apos;valueCoding&apos;][&apos;display&apos;]</messageSegment>
@@ -46,7 +46,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - birthDate (out) &lt;-- row [1] - birthDate (in)</name>
+      <name>birthdate</name>
       <sequenceNumber>5</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;birthDate&apos;]</messageSegment>
@@ -55,7 +55,7 @@
       <replacements/>
     </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
     <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-      <name>entry [0] - resource - deceasedBoolean (out) &lt;-- row [1] - deceasedBoolean (in)</name>
+      <name>deceased</name>
       <sequenceNumber>6</sequenceNumber>
       <enabled>true</enabled>
       <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;deceasedBoolean&apos;]</messageSegment>

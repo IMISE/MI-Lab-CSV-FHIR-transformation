@@ -1,7 +1,7 @@
 <channel version="4.2.0">
   <id>6c059805-175b-4477-a071-7269b0f9d817</id>
   <nextMetaDataId>3</nextMetaDataId>
-  <name>MII Patient from MIMIC CSV</name>
+  <name>MII-Patient Channel complete</name>
   <description></description>
   <revision>6</revision>
   <sourceConnector version="4.2.0">
@@ -11,7 +11,7 @@
       <pluginProperties/>
       <pollConnectorProperties version="4.2.0">
         <pollingType>INTERVAL</pollingType>
-        <pollOnStart>true</pollOnStart>
+        <pollOnStart>false</pollOnStart>
         <pollingFrequency>5000</pollingFrequency>
         <pollingHour>0</pollingHour>
         <pollingMinute>0</pollingMinute>
@@ -51,7 +51,7 @@
         <queueBufferSize>1000</queueBufferSize>
       </sourceConnectorProperties>
       <scheme>FILE</scheme>
-      <host>/opt/connect/appdata/Mii-Patient/</host>
+      <host>/opt/connect/appdata/Patient/</host>
       <fileFilter>*.csv</fileFilter>
       <regex>false</regex>
       <directoryRecursion>false</directoryRecursion>
@@ -64,8 +64,8 @@
       <passive>true</passive>
       <validateConnection>true</validateConnection>
       <afterProcessingAction>MOVE</afterProcessingAction>
-      <moveToDirectory>/opt/connect/appdata/Mii-Patient/Processed/</moveToDirectory>
-      <moveToFileName>PROCESSED_${originalFilename}</moveToFileName>
+      <moveToDirectory>/opt/connect/appdata/Processed/</moveToDirectory>
+      <moveToFileName></moveToFileName>
       <errorReadingAction>NONE</errorReadingAction>
       <errorResponseAction>AFTER_PROCESSING</errorResponseAction>
       <errorMoveToDirectory></errorMoveToDirectory>
@@ -82,7 +82,7 @@
     <transformer version="4.2.0">
       <elements>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - identifier [0] - system (out) &lt;-- row [1] - identifier_system (in)</name>
+          <name>identifier_system</name>
           <sequenceNumber>0</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;identifier&apos;][0][&apos;system&apos;]</messageSegment>
@@ -91,7 +91,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - identifier [0] - value (out) &lt;-- row [1] - identifier_value (in)</name>
+          <name>identifier_value</name>
           <sequenceNumber>1</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;identifier&apos;][0][&apos;value&apos;]</messageSegment>
@@ -100,7 +100,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - name [0] - use (out) &lt;-- row [1] - name_use (in)</name>
+          <name>name_use</name>
           <sequenceNumber>2</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;name&apos;][0][&apos;use&apos;]</messageSegment>
@@ -109,7 +109,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - name [0] - family (out) &lt;-- row [1] - name_family (in)</name>
+          <name>name_family</name>
           <sequenceNumber>3</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;name&apos;][0][&apos;family&apos;]</messageSegment>
@@ -118,7 +118,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - gender (out) &lt;-- row [1] - gender (in)</name>
+          <name>gender</name>
           <sequenceNumber>4</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;gender&apos;]</messageSegment>
@@ -127,7 +127,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - _gender - extension [0] - valueCoding - code (out) &lt;-- row [1] - gender_ext_code (in)</name>
+          <name>gender_code</name>
           <sequenceNumber>5</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;_gender&apos;][&apos;extension&apos;][0][&apos;valueCoding&apos;][&apos;code&apos;]</messageSegment>
@@ -136,7 +136,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - _gender - extension [0] - valueCoding - display (out) &lt;-- row [1] - gender_ext_display (in)</name>
+          <name>gender_display</name>
           <sequenceNumber>6</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;_gender&apos;][&apos;extension&apos;][0][&apos;valueCoding&apos;][&apos;display&apos;]</messageSegment>
@@ -145,7 +145,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - birthDate (out) &lt;-- row [1] - birthDate (in)</name>
+          <name>birthdate</name>
           <sequenceNumber>7</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;birthDate&apos;]</messageSegment>
@@ -154,11 +154,20 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - deceasedBoolean (out) &lt;-- row [1] - deceasedBoolean (in)</name>
+          <name>deceased</name>
           <sequenceNumber>8</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;deceasedBoolean&apos;]</messageSegment>
           <mapping>msg[&apos;row&apos;][0][&apos;deceasedBoolean&apos;].toString()</mapping>
+          <defaultValue></defaultValue>
+          <replacements/>
+        </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+        <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
+          <name>name_family</name>
+          <sequenceNumber>9</sequenceNumber>
+          <enabled>true</enabled>
+          <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;name&apos;][0][&apos;family&apos;]</messageSegment>
+          <mapping>msg[&apos;row&apos;][0][&apos;name_family&apos;].toString()</mapping>
           <defaultValue></defaultValue>
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
@@ -363,7 +372,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1733398801930</time>
+        <time>1736423518287</time>
         <timezone>Europe/Berlin</timezone>
       </lastModified>
       <pruningSettings>
@@ -372,24 +381,6 @@ return;</undeployScript>
       </pruningSettings>
       <userId>1</userId>
     </metadata>
-    <channelTags>
-      <channelTag>
-        <id>fd7ca788-489e-4a55-b994-632a67bb3368</id>
-        <name>GMDS</name>
-        <channelIds>
-          <string>ce7306a2-9aa7-42e5-a286-db4f6971cdf9</string>
-          <string>0dbe88ad-fb16-4f3a-a913-8417defb9e7c</string>
-          <string>c90dae76-a59a-435e-8596-4ee4d3ec9784</string>
-          <string>6c059805-175b-4477-a071-7269b0f9d817</string>
-          <string>c0ca2192-a764-462e-9ad9-f5a0058df305</string>
-        </channelIds>
-        <backgroundColor>
-          <red>0</red>
-          <green>255</green>
-          <blue>255</blue>
-          <alpha>255</alpha>
-        </backgroundColor>
-      </channelTag>
-    </channelTags>
+    <channelTags/>
   </exportData>
 </channel>

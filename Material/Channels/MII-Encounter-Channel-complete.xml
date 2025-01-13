@@ -1,9 +1,9 @@
 <channel version="4.2.0">
   <id>99980c94-8ab4-44c4-94a8-6d77d99e47dd</id>
   <nextMetaDataId>2</nextMetaDataId>
-  <name>MII-Fall from MIMIC CSV complete</name>
+  <name>MII-Encounter Channel complete</name>
   <description></description>
-  <revision>5</revision>
+  <revision>6</revision>
   <sourceConnector version="4.2.0">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -51,8 +51,8 @@
         <queueBufferSize>1000</queueBufferSize>
       </sourceConnectorProperties>
       <scheme>FILE</scheme>
-      <host>/opt/connect/appdata/Fall/</host>
-      <fileFilter>*</fileFilter>
+      <host>/opt/connect/appdata/Patient/</host>
+      <fileFilter>*.csv</fileFilter>
       <regex>false</regex>
       <directoryRecursion>false</directoryRecursion>
       <ignoreDot>true</ignoreDot>
@@ -64,7 +64,7 @@
       <passive>true</passive>
       <validateConnection>true</validateConnection>
       <afterProcessingAction>MOVE</afterProcessingAction>
-      <moveToDirectory>/opt/connect/appdata/Fall/Processed/</moveToDirectory>
+      <moveToDirectory>/opt/connect/appdata/Processed/</moveToDirectory>
       <moveToFileName></moveToFileName>
       <errorReadingAction>NONE</errorReadingAction>
       <errorResponseAction>AFTER_PROCESSING</errorResponseAction>
@@ -82,7 +82,7 @@
     <transformer version="4.2.0">
       <elements>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - identifier [0] - value (out) &lt;-- row [1] - Aufnahmenummer (in)</name>
+          <name>aufnahmenummer</name>
           <sequenceNumber>0</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;identifier&apos;][0][&apos;value&apos;]</messageSegment>
@@ -91,7 +91,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - class - code (out) - &lt;-- row [1] - ClassCode (in)</name>
+          <name>class_code</name>
           <sequenceNumber>1</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;class&apos;][&apos;code&apos;]</messageSegment>
@@ -100,7 +100,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - class - display (out) &lt;-- row [1] - ClassDisplay (in)</name>
+          <name>class_display</name>
           <sequenceNumber>2</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;class&apos;][&apos;display&apos;]</messageSegment>
@@ -109,7 +109,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - serviceProvider -  identifier - value (out) &lt;-- row [1] - ServiceProvider (in)</name>
+          <name>serviceprovider</name>
           <sequenceNumber>3</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;serviceProvider&apos;][&apos;identifier&apos;][&apos;value&apos;]</messageSegment>
@@ -118,7 +118,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - period - start (out) &lt;-- row [1] - start (in)</name>
+          <name>period_start</name>
           <sequenceNumber>4</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;period&apos;][&apos;start&apos;]</messageSegment>
@@ -127,7 +127,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - period - end (out) &lt;-- row [1] - end (in)</name>
+          <name>period_end</name>
           <sequenceNumber>5</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;period&apos;][&apos;end&apos;]</messageSegment>
@@ -136,7 +136,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - hospitalization - admitSource - coding [0] - code (out) &lt;-- row [1] - AdmitSource (in)</name>
+          <name>admitsource</name>
           <sequenceNumber>6</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;hospitalization&apos;][&apos;admitSource&apos;][&apos;coding&apos;][0][&apos;code&apos;]</messageSegment>
@@ -145,7 +145,7 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - hospitalization - dischargeDisposition - coding [0] - code (out) &lt;-- row [1] - DischargeDisposition (in)</name>
+          <name>dischargedisposition</name>
           <sequenceNumber>7</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;hospitalization&apos;][&apos;dischargeDisposition&apos;][&apos;coding&apos;][0][&apos;code&apos;]</messageSegment>
@@ -154,12 +154,12 @@
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
         <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.2.0">
-          <name>entry [0] - resource - subject - reference (out)</name>
+          <name>reference</name>
           <sequenceNumber>8</sequenceNumber>
           <enabled>true</enabled>
           <messageSegment>tmp[&apos;entry&apos;][0][&apos;resource&apos;][&apos;subject&apos;][&apos;reference&apos;]</messageSegment>
-          <mapping></mapping>
-          <defaultValue>&apos;Patient?identifier=&apos; + msg[&apos;row&apos;][0][&apos;Subject&apos;].toString()</defaultValue>
+          <mapping>&apos;Patient?identifier=&apos; + msg[&apos;row&apos;][0][&apos;Subject&apos;].toString()</mapping>
+          <defaultValue></defaultValue>
           <replacements/>
         </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
       </elements>
@@ -368,7 +368,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1733399628920</time>
+        <time>1736423976328</time>
         <timezone>Europe/Berlin</timezone>
       </lastModified>
       <pruningSettings>
