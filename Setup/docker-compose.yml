@@ -15,8 +15,8 @@ services:
       - KEYSTORE_STOREPASS=xDau60tdWQjq
       - KEYSTORE_KEYPASS=1R78Ut4k1l7l
     ports:
-      - 8080:8080/tcp
-      - 8443:8443/tcp
+      - "127.0.0.1:8080:8080/tcp"
+      - "127.0.0.1:8443:8443/tcp"
     volumes:
       - ./mirth-connect:/opt/connect/appdata
     depends_on:
@@ -28,7 +28,7 @@ services:
       - POSTGRES_PASSWORD=mirthdb
       - POSTGRES_DB=mirthdb
     ports:
-      - 5434:5432
+      - "127.0.0.1:5434:5432"
   hapi: 
     image: hapiproject/hapi:latest
     environment:
@@ -38,7 +38,7 @@ services:
       - SPRING_DATASOURCE_DRIVERCLASSNAME=org.postgresql.Driver
       - spring.jpa.properties.hibernate.dialect=ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
     ports:
-      - 8090:8080
+      - "127.0.0.1:8090:8080"
   hapi-db:
     image: postgres
     container_name: hapi-db
@@ -47,14 +47,14 @@ services:
       - POSTGRES_USER=hapi
       - POSTGRES_PASSWORD=hapi
     ports:
-      - 5433:5432
+      - "127.0.0.1:5433:5432"
     volumes:
       - hapi-data:/var/lib/postgresql/data
   clinfhir:
     image: mperbix/mi-lab-clinfhir:latest
     container_name: clinfhir
     ports:
-      - 8000:8000
+      - "127.0.0.1:8000:8000"
 
 volumes:
     hapi-data:
