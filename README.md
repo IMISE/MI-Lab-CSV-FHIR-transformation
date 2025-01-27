@@ -6,9 +6,9 @@ und [Hapi FHIR](https://hapifhir.io/).
 ## Inhaltsverzeichnis
 1. [Docker Installation](#docker-installation)
 2. [Docker-Compose](#docker-compose)
-3. [Mirth-Connect Installation](mirth-connect-installation)
-4. [Docker Netzwerk mit Mirth-Connect](docker-netzwerk-mit-mirth-connect)
-5. [Mirth-Connect Ordnerstruktur](mirth-connect-ordnerstruktur)
+3. [Mirth-Connect Installation](#mirth-connect-installation)
+4. [Docker Netzwerk mit Mirth-Connect](#docker-netzwerk-mit-mirth-connect)
+5. [Mirth-Connect Ordnerstruktur](#mirth-connect-ordnerstruktur)
 
 **Vorraussetzungen:** Docker mit Docker-compose, Java
 
@@ -63,7 +63,7 @@ Weitere Informationen dazu sind in der Docker Dokumentation zu [Volumes](https:/
 
 **Docker Container Ordner**: /opt/connect/appdata 
 
-**Lokaler Ordner**: /Setup/mirth-connect
+**Lokaler Ordner**: [/Setup/mirth-connect](https://github.com/IMISE/MI-Lab-E02-CSV-to-FHIR/tree/main/Setup/mirth-connect)
 
 **Wichtig:** Nur Dateien und Unterordner in dem Ordner **/Setup/mirth-connect** werden von Mirth-Connect erkannt. 
 
