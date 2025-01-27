@@ -44,7 +44,7 @@ Für andere Betriebssysteme siehe [Docker](https://www.docker.com/products/docke
 ### Mirth-Connect Ordnerstruktur
 In der Übung soll Mirth-Connect auf die CSV-Dateien in einem definierten Ordner zugreifen und diese einlesen. Da Mirth-Connect abgekapselt in einem
 Docker Container läuft, wurde ein Ordner im Container auf einen lokalen Ordner gemappt. 
-Weitere Informationen dazu sind in der Docker Dokumentation zu ![Volumes](https://docs.docker.com/engine/storage/volumes/).
+Weitere Informationen dazu sind in der Docker Dokumentation zu [Volumes](https://docs.docker.com/engine/storage/volumes/).
 
 **Docker Container Ordner**: /opt/connect/appdata 
 
